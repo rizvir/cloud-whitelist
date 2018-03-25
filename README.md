@@ -25,12 +25,12 @@ cp config.yml.sample config.yml
 
 You first need to have a `config.yml` file:
 ```
-my_name: "rizvir"
+my_name: "rizvir" # Used for the security group description
 accounts:
-    your-account-name:  # <-- this is only used for logging
+    your-account-name:  # Used for logging only
         cloud: aws
         access_key: ABFDU832423490
-        secret_key: sifoudhsfgsfu89dsug7dysgyg
+        secret_key: abcd1234567890123456789
         region: ap-southeast-2
         security_groups:
             - type: id
