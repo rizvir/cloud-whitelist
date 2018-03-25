@@ -1,0 +1,7 @@
+__pycache__/
+*.code-workspace
+venv
+*.swp
+*.pyc
+config.yml
+.vscode/

@@ -1,0 +1,14 @@
+my_name: "My name"  # Used for SG description
+accounts:
+    your-account-name:  # this is only used for logging:
+        cloud: aws
+        profile: rizvir
+        security_groups:
+            - type: id
+              id: sg-147ed66d
+              rules:
+                - tcp/22
+                - tcp/443
+                - icmp/-1
+                - tcp/8000-9000
+
