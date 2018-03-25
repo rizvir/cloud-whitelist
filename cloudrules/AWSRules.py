@@ -113,6 +113,9 @@ class AWSRules(cloudRules):
                 to_port = entry['ToPort']
                 protocol = entry['IpProtocol']
                 for ip_range in entry['IpRanges']:
+                    # Skip rules without a description:
+                    if not 'Description' in ip_range:
+                        continue
                     description = ip_range['Description']
                     cidr_ip = ip_range['CidrIp']
                     ip = cidr_ip.split('/')[0]
