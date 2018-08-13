@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-from cloudrules.AWSRules import AWSRules
 
 from urllib.request import urlopen
 import socket
@@ -54,7 +53,12 @@ def run(config_filename, current_ip):
         try:
             cloud = account_config['cloud']
             if cloud == 'aws':
+                from cloudrules.AWSRules import AWSRules
                 cloud_rules = AWSRules(user_name, account_name, account_config,
+                                        current_ip)
+            elif cloud == 'azure':
+                from cloudrules.AzureRules import AzureRules
+                cloud_rules = AzureRules(user_name, account_name, account_config,
                                         current_ip)
             else:
                 logging.error('[{0}] Skipping unknown cloud {1}'.format(

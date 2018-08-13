@@ -176,13 +176,13 @@ class cloudRules(ABC):
             current_rules = self.get_current_relevant_rules(rule_group)
             logging.debug("Current rules are: {0}".format(current_rules))
 
-            add_rules = desired_rules - current_rules
-            for rule in add_rules:
-                self.add_rule(rule, rule_group)
-
             remove_rules = current_rules - desired_rules
             for rule in remove_rules:
                 self.remove_rule(rule, rule_group)
+
+            add_rules = desired_rules - current_rules
+            for rule in add_rules:
+                self.add_rule(rule, rule_group)
 
 
 
